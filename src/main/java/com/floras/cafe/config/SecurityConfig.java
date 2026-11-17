@@ -94,6 +94,9 @@ public class SecurityConfig {
                                 // Configure authorization
                                 .authorizeHttpRequests(auth -> auth
 
+                                                // Public shop availability
+                                                .requestMatchers(HttpMethod.GET, "/api/shop/status").permitAll()
+
                                                 // Authentication
                                                 .requestMatchers("/api/auth/**").permitAll()
 

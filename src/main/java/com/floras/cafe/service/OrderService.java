@@ -34,6 +34,7 @@ import jakarta.persistence.EntityManager;
 @Slf4j
 public class OrderService {
 
+        private final ShopService shopService;
         private final OrderRepository orderRepository;
         private final UserRepository userRepository;
         private final MenuRepository menuRepository;
@@ -51,6 +52,9 @@ public class OrderService {
 
         @Transactional
         public OrderResponseDto placeOrder(OrderRequestDto request, Authentication authentication) {
+
+                // CHECK SHOP AVAILABILITY FIRST
+                shopService.checkShopOpen();
 
                 if (request == null || request.getItems() == null || request.getItems().isEmpty()) {
                         throw new IllegalArgumentException("Order must contain items");
