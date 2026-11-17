@@ -6,6 +6,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.floras.cafe.dto.response.UserResponseDto;
 import com.floras.cafe.model.Role;
 import com.floras.cafe.model.User;
 import com.floras.cafe.repository.UserRepository;
@@ -60,12 +61,19 @@ public class UserService {
     }
 
     // Get all customers (Admin)
+    // @Transactional(readOnly = true)
+    // public List<User> getAllCustomers() {
+    // return userRepository.findAll()
+    // .stream()
+    // .filter(user -> user.getRole() == Role.CUSTOMER)
+    // .toList();
+    // }
+
+    // Get all customers with order count (Admin)
     @Transactional(readOnly = true)
-    public List<User> getAllCustomers() {
-        return userRepository.findAll()
-                .stream()
-                .filter(user -> user.getRole() == Role.CUSTOMER)
-                .toList();
+    public List<UserResponseDto> getAllCustomers() {
+
+        return userRepository.findCustomersWithOrderCount(Role.CUSTOMER);
     }
 
     // Find customer by ID

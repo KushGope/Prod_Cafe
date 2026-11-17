@@ -127,7 +127,6 @@ public class AuthService {
                                 .id(user.getId())
                                 .username(user.getUsername())
                                 .name(user.getName())
-                                .email(user.getEmail())
                                 .role(user.getRole())
                                 .createdAt(user.getCreatedAt())
                                 .build();
