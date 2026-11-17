@@ -1,0 +1,186 @@
+[
+    {
+        "name": "Classic Margherita",
+        "description": "Fresh tomato sauce, mozzarella & basil.",
+        "price": 140,
+        "category": "Pizza",
+        "available": true,
+        "imageUrl": "https://res.cloudinary.com/dgix7g1z/image/upload/v1794814716/20261018_194134.jpg.jpg"
+    },
+    {
+        "name": "Paneer Tikka Onion Pizza",
+        "description": "Paneer tikka, onion, capsicum & mozzarella.",
+        "price": 180,
+        "category": "Pizza",
+        "available": true,
+        "imageUrl": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "name": "Cheese and Corn Delight",
+        "description": "Sweet corn, extra cheese, herbs & mozzarella.",
+        "price": 160,
+        "category": "Pizza",
+        "available": true,
+        "imageUrl": "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "name": "Mushroom Cheese Burst",
+        "description": "Mushrooms, mozzarella & creamy cheese.",
+        "price": 170,
+        "category": "Pizza",
+        "available": true,
+        "imageUrl": "https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "name": "Flora's Garden Special",
+        "description": "Bell peppers, olives, mushrooms, corn & mozzarella.",
+        "price": 210,
+        "category": "Pizza",
+        "available": true,
+        "imageUrl": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "name": "Sausage Supreme Pizza",
+        "description": "Chicken sausages, bell peppers, onion & mozzarella.",
+        "price": 190,
+        "category": "Pizza",
+        "available": true,
+        "imageUrl": "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "name": "Chicken Tikka Pizza",
+        "description": "Chicken tikka, onion, capsicum & mozzarella.",
+        "price": 210,
+        "category": "Pizza",
+        "available": true,
+        "imageUrl": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "name": "Flora's Signature Special",
+        "description": "Chicken, bell peppers, olives, jalapeños & mozzarella.",
+        "price": 250,
+        "category": "Pizza",
+        "available": true,
+        "imageUrl": "https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "name": "Salted Fries",
+        "description": "Classic crispy golden fries.",
+        "price": 80,
+        "category": "Snack",
+        "available": true,
+        "imageUrl": "https://placehold.co/800x600/f5eee8/8b4513?text=Flora+Cafe"
+    },
+    {
+        "name": "Peri Peri Fries",
+        "description": "Crispy fries tossed in spicy peri peri seasoning.",
+        "price": 110,
+        "category": "Snack",
+        "available": true,
+        "imageUrl": "https://placehold.co/800x600/f5eee8/8b4513?text=Flora+Cafe"
+    },
+    {
+        "name": "Cheese Toast",
+        "description": "Golden cheese toast (4 slices).",
+        "price": 90,
+        "category": "Snack",
+        "available": true,
+        "imageUrl": "https://placehold.co/800x600/f5eee8/8b4513?text=Flora+Cafe"
+    },
+    {
+        "name": "Garlic Bread",
+        "description": "Buttery garlic bread (4 bread sticks).",
+        "price": 120,
+        "category": "Snack",
+        "available": true,
+        "imageUrl": "https://placehold.co/800x600/f5eee8/8b4513?text=Flora+Cafe"
+    },
+    {
+        "name": "Veg Momo",
+        "description": "Steamed vegetable momos (6 pieces).",
+        "price": 80,
+        "category": "Snack",
+        "available": true,
+        "imageUrl": "https://placehold.co/800x600/f5eee8/8b4513?text=Flora+Cafe"
+    },
+    {
+        "name": "Chicken Momo",
+        "description": "Juicy steamed chicken momos (6 pieces).",
+        "price": 100,
+        "category": "Snack",
+        "available": true,
+        "imageUrl": "https://placehold.co/800x600/f5eee8/8b4513?text=Flora+Cafe"
+    },
+    {
+        "name": "Fruty pancake",
+        "description": "Indulge with fruity flavors.",
+        "price": 200,
+        "category": "Pancake",
+        "available": true,
+        "imageUrl": "https://placehold.co/800x600/f5eee8/8b4513?text=Flora+Cafe"
+    },
+    {
+        "name": "Banana pancake",
+        "description": "A delicious banana-flavored pancake.",
+        "price": 160,
+        "category": "Pancake",
+        "available": true,
+        "imageUrl": "https://placehold.co/800x600/f5eee8/8b4513?text=Flora+Cafe"
+    },
+    {
+        "name": "Choco Chips pancake",
+        "description": "A delicious chocolate chip-flavored pancake.",
+        "price": 170,
+        "category": "Pancake",
+        "available": true,
+        "imageUrl": "https://placehold.co/800x600/f5eee8/8b4513?text=Flora+Cafe"
+    },
+    {
+        "name": "Veg Sandwich",
+        "description": "Fresh vegetables in a toasted bread.",
+        "price": 50,
+        "category": "Sandwich",
+        "available": true,
+        "imageUrl": "https://placehold.co/800x600/f5eee8/8b4513?text=Flora+Cafe"
+    },
+    {
+        "name": "Cheese Sandwich",
+        "description": "Delicious cheese sandwich.",
+        "price": 70,
+        "category": "Sandwich",
+        "available": true,
+        "imageUrl": "https://placehold.co/800x600/f5eee8/8b4513?text=Flora+Cafe"
+    },
+    {
+        "name": "Chicken Sandwich",
+        "description": "Juicy chicken in a toasted bread.",
+        "price": 80,
+        "category": "Sandwich",
+        "available": true,
+        "imageUrl": "https://placehold.co/800x600/f5eee8/8b4513?text=Flora+Cafe"
+    },
+    {
+        "name": "Egg Sandwich",
+        "description": "Scrambled eggs in a toasted bread.",
+        "price": 60,
+        "category": "Sandwich",
+        "available": true,
+        "imageUrl": "https://placehold.co/800x600/f5eee8/8b4513?text=Flora+Cafe"
+    },
+    {
+        "name": "Chocolate Sandwich",
+        "description": "Delicious chocolate sandwich.",
+        "price": 90,
+        "category": "Sandwich",
+        "available": true,
+        "imageUrl": "https://placehold.co/800x600/f5eee8/8b4513?text=Flora+Cafe"
+    },
+    {
+        "name": "Panner Sandwich",
+        "description": "Fresh panner sandwich.",
+        "price": 90,
+        "category": "Sandwich",
+        "available": true,
+        "imageUrl": "https://placehold.co/800x600/f5eee8/8b4513?text=Flora+Cafe"
+    }
+]

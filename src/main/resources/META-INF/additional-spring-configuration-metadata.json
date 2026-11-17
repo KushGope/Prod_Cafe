@@ -1,0 +1,9 @@
+{
+    "properties": [
+        {
+            "name": "application.cors.allowed-origins",
+            "type": "java.util.List<java.lang.String>",
+            "description": "Allowed frontend origins for CORS configuration."
+        }
+    ]
+}

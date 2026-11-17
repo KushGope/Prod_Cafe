@@ -1,0 +1,74 @@
+Folder PATH listing
+Volume serial number is 72F1-0858
+C:\USERS\KUSHG\ONEDRIVE\DOCUMENTS\BTECH\XODES\SPRINGPROJECT\CAFE\SRC
++---main
+¦   +---java
+¦   ¦   +---com
+¦   ¦       +---floras
+¦   ¦           +---cafe
+¦   ¦               ¦   CafeApplication.java
+¦   ¦               ¦   
+¦   ¦               +---config
+¦   ¦               ¦       MenuDataInitializer.java
+¦   ¦               ¦       SecurityConfig.java
+¦   ¦               ¦       WebSocketConfig.java
+¦   ¦               ¦       
+¦   ¦               +---controller
+¦   ¦               ¦       AdminController.java
+¦   ¦               ¦       AuthController.java
+¦   ¦               ¦       MenuController.java
+¦   ¦               ¦       OrderController.java
+¦   ¦               ¦       
+¦   ¦               +---dto
+¦   ¦               ¦   +---request
+¦   ¦               ¦   ¦       LoginRequestDto.java
+¦   ¦               ¦   ¦       OrderRequestDto.java
+¦   ¦               ¦   ¦       SignupRequestDto.java
+¦   ¦               ¦   ¦       
+¦   ¦               ¦   +---response
+¦   ¦               ¦           AuthResponseDto.java
+¦   ¦               ¦           OrderResponseDto.java
+¦   ¦               ¦           UserResponseDto.java
+¦   ¦               ¦           
+¦   ¦               +---exception
+¦   ¦               ¦       GlobalExceptionHandler.java
+¦   ¦               ¦       
+¦   ¦               +---model
+¦   ¦               ¦       MenuItem.java
+¦   ¦               ¦       Order.java
+¦   ¦               ¦       OrderItem.java
+¦   ¦               ¦       OrderStatus.java
+¦   ¦               ¦       Role.java
+¦   ¦               ¦       User.java
+¦   ¦               ¦       
+¦   ¦               +---repository
+¦   ¦               ¦       MenuRepository.java
+¦   ¦               ¦       OrderRepository.java
+¦   ¦               ¦       UserRepository.java
+¦   ¦               ¦       
+¦   ¦               +---security
+¦   ¦               ¦       JwtAuthenticationFilter.java
+¦   ¦               ¦       JwtService.java
+¦   ¦               ¦       
+¦   ¦               +---service
+¦   ¦                       AuthService.java
+¦   ¦                       CustomUserDetailsService.java
+¦   ¦                       MenuService.java
+¦   ¦                       OrderService.java
+¦   ¦                       UserService.java
+¦   ¦                       
+¦   +---resources
+¦       ¦   application.properties
+¦       ¦   
+¦       +---data
+¦       ¦       menu-items.json
+¦       ¦       
+¦       +---static
+¦       +---templates
++---test
+    +---java
+        +---com
+            +---floras
+                +---cafe
+                        CafeApplicationTests.java
+                        
