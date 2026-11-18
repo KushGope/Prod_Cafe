@@ -1,4 +1,4 @@
-# <img src="./src/assets/images/jasmine-tea.jpg" alt="FloraCafe Logo" width="40" align="center" /> FloraCafe – Backend
+# <img src="./src/assets/images/jasmine-tea.jpg" alt="FloraCafe Logo" width="30" align="center" /> FloraCafe – Backend
 
 
 
