@@ -1,8 +1,8 @@
-<h1 align="center">
-  <img src="./src/assets/images/jasmine-tea.jpg" alt="FloraCafe Logo" width="23" />
-  FloraCafe – Backend
-</h1>
+[//]: # "☕ FloraCafe – Backend"
 
+<p align="center">
+  <img src="./src/assets/images/jasmine-tea.jpg" alt="FloraCafe Logo" width="180" />
+</p>
 
 <h3 align="center">Spring Boot REST API for Café Management & Online Ordering</h3>
 
