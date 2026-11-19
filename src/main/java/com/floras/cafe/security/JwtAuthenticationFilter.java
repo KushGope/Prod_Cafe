@@ -114,7 +114,21 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     protected boolean shouldNotFilter(HttpServletRequest request) {
 
         String path = request.getServletPath();
-        return path.startsWith("/api/auth/")
-                || path.startsWith("/api/menu/");
+        // Never process JWT for public endpoints
+        if (path.startsWith("/api/auth/")) {
+            return true;
+        }
+
+        if (path.startsWith("/api/menu/")) {
+            return true;
+        }
+
+        // Public shop availability endpoint
+        if (request.getMethod().equals("GET")
+                && path.equals("/api/shop/status")) {
+            return true;
+        }
+
+        return false;
     }
 }
