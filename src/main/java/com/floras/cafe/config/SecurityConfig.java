@@ -110,10 +110,6 @@ public class SecurityConfig {
                                                 // Admin APIs
                                                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
 
-                                                // Deny other order operations by default
-                                                .requestMatchers("/api/orders/**")
-                                                .denyAll()
-
                                                 // Everything else requires authentication
                                                 .anyRequest().authenticated())
 
