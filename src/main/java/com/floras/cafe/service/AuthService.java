@@ -10,13 +10,16 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 import java.util.UUID;
 
+import com.floras.cafe.dto.request.GoogleLoginRequestDto;
 import com.floras.cafe.dto.request.LoginRequestDto;
 import com.floras.cafe.dto.request.SignupRequestDto;
 import com.floras.cafe.dto.response.AuthResponseDto;
+import com.floras.cafe.dto.response.GoogleLoginResponseDto;
 import com.floras.cafe.dto.response.UserResponseDto;
 import com.floras.cafe.model.Role;
 import com.floras.cafe.model.User;
 import com.floras.cafe.security.JwtService;
+import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -30,6 +33,7 @@ public class AuthService {
         private final JwtService jwtService;
 
         private final AuthenticationManager authenticationManager;
+        private final GoogleVerifierService googleVerifierService;
 
         // Customer registration
         @Transactional
@@ -70,6 +74,70 @@ public class AuthService {
                                 .token(token)
                                 .user(mapToResponse(user))
                                 .build();
+        }
+
+        // Google Login
+        @Transactional
+        public GoogleLoginResponseDto googleLogin(@Valid GoogleLoginRequestDto request) {
+
+                // 1. Verify Google ID token
+                GoogleIdToken.Payload payload = googleVerifierService.verify(request.getIdToken());
+
+                // 2. Extract Google user information
+                String googleId = payload.getSubject();
+                String email = payload.getEmail();
+                String name = (String) payload.get("name");
+
+                if (googleId == null || googleId.isBlank()) {
+                        throw new IllegalArgumentException(
+                                        "Invalid Google account");
+                }
+
+                // 3. Find existing user
+                User user = userService.getUserByGoogleId(googleId);
+
+                // 4. Register user if not already registered
+                if (user != null) {
+                        if (user.getRole() != Role.CUSTOMER) {
+                                throw new IllegalArgumentException(
+                                                "You are not authorized to access this portal");
+                        }
+                        return buildGoogleLoginResponse(user);
+                }
+
+                String username = request.getMobileNumber();
+
+                if (username == null || username.isBlank()) {
+
+                        return GoogleLoginResponseDto.builder()
+                                        .success(true)
+                                        .message("Please provide your mobile number")
+                                        .requiresMobileNumber(true)
+                                        .requiresExistingLogin(false)
+                                        .build();
+                }
+
+                // 5. Check whether mobile number already exists
+                if (userService.existsByUsername(username)) {
+
+                        return GoogleLoginResponseDto.builder()
+                                        .success(false)
+                                        .message("This mobile number is already registered. Please login using your existing account to link Google.")
+                                        .requiresMobileNumber(false)
+                                        .requiresExistingLogin(true)
+                                        .build();
+                }
+
+                // 6. Create new Google customer
+                User newUser = userService.signupGoogleCustomer(
+                                username,
+                                name,
+                                email,
+                                googleId);
+
+                // 7. Generate application JWT
+                return buildGoogleLoginResponse(newUser);
+
         }
 
         // Guest login
@@ -151,5 +219,25 @@ public class AuthService {
                         throw new IllegalArgumentException(
                                         "You are not authorized to access this portal");
                 }
+        }
+
+        private GoogleLoginResponseDto buildGoogleLoginResponse(User user) {
+
+                UserDetails userDetails = org.springframework.security.core.userdetails.User
+                                .withUsername(user.getUsername())
+                                .password(user.getPassword())
+                                .authorities("ROLE_CUSTOMER")
+                                .build();
+
+                String token = jwtService.generateToken(userDetails);
+
+                return GoogleLoginResponseDto.builder()
+                                .success(true)
+                                .message("Google login successful")
+                                .requiresMobileNumber(false)
+                                .requiresExistingLogin(false)
+                                .token(token)
+                                .user(mapToResponse(user))
+                                .build();
         }
 }

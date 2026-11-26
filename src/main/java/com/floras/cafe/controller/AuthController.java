@@ -5,10 +5,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.floras.cafe.dto.request.GoogleLoginRequestDto;
 import com.floras.cafe.dto.request.LoginRequestDto;
 import com.floras.cafe.dto.request.SignupRequestDto;
 import com.floras.cafe.dto.response.AuthResponseDto;
+import com.floras.cafe.dto.response.GoogleLoginResponseDto;
 import com.floras.cafe.service.AuthService;
+import com.floras.cafe.service.GoogleVerifierService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +22,7 @@ import lombok.RequiredArgsConstructor;
 public class AuthController {
 
     private final AuthService authService;
+    private final GoogleVerifierService googleService;
 
     @PostMapping("/signup")
     public ResponseEntity<AuthResponseDto> signup(
@@ -31,6 +35,12 @@ public class AuthController {
     public ResponseEntity<AuthResponseDto> login(
             @Valid @RequestBody LoginRequestDto request) {
         return ResponseEntity.ok(authService.login(request));
+    }
+
+    @PostMapping("/login/google")
+    public ResponseEntity<GoogleLoginResponseDto> googlelogin(
+            @Valid @RequestBody GoogleLoginRequestDto request) {
+        return ResponseEntity.ok(authService.googleLogin(request));
     }
 
     @PostMapping("/admin/login")
